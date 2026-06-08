@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0B2A7A;
+            --primary-dark: #071B5B;
+            --primary-light: #1D4ED8;
+            --accent: #D4A02A;
+            --accent-dark: #B8860B;
+            --accent-light: #E8C15A;
+            --text-light: #FFFFFF;
+            --gradient-primary: linear-gradient(135deg, #0B2A7A 0%, #123A9B 100%);
+            --gradient-gold: linear-gradient(135deg, #D4A02A 0%, #F0C14B 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            background: var(--gradient-primary);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background Animation */
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: .5;
+        }
+
+        .circle-1 {
+            width: 500px;
+            height: 500px;
+            background: rgba(212, 160, 42, .25);
+            top: -150px;
+            left: -100px;
+            animation: float1 12s linear infinite;
+        }
+
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, .08);
+            right: -100px;
+            top: 10%;
+            animation: float2 15s linear infinite;
+        }
+
+        .circle-3 {
+            width: 550px;
+            height: 550px;
+            background: rgba(29, 78, 216, .25);
+            right: -180px;
+            bottom: -180px;
+            animation: float3 18s linear infinite;
+        }
+
+        /* Main Section */
+
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .error-content {
+            max-width: 850px;
+        }
+
+        /* 404 Number */
+
+        .error-number {
+            font-size: 220px;
+            font-weight: 900;
+            line-height: 1;
+            color: #fff;
+            text-shadow:
+                0 0 10px rgba(255, 255, 255, .2),
+                0 0 20px rgba(212, 160, 42, .5),
+                0 0 40px rgba(212, 160, 42, .3);
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .error-number span {
+            color: var(--accent);
+        }
+
+        /* Text */
+
+        .error-content h2 {
+            color: #fff;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .error-content p {
+            color: rgba(255, 255, 255, .8);
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        /* Button */
+
+        .error-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 38px;
+            text-decoration: none;
+            border-radius: 60px;
+            background: var(--gradient-gold);
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 16px;
+            transition: .4s;
+            box-shadow: 0 10px 30px rgba(212, 160, 42, .35);
+        }
+
+        .error-btn:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(212, 160, 42, .45);
+        }
+
+        /* Floating Dots */
+
+        .dots span {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, .4);
+            border-radius: 50%;
+        }
+
+        .dots span:nth-child(1) {
+            top: 15%;
+            left: 12%;
+            animation: move 8s infinite;
+        }
+
+        .dots span:nth-child(2) {
+            top: 25%;
+            right: 15%;
+            animation: move 10s infinite;
+        }
+
+        .dots span:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation: move 12s infinite;
+        }
+
+        .dots span:nth-child(4) {
+            bottom: 15%;
+            right: 25%;
+            animation: move 9s infinite;
+        }
+
+        .dots span:nth-child(5) {
+            top: 50%;
+            left: 5%;
+            animation: move 11s infinite;
+        }
+
+        .dots span:nth-child(6) {
+            top: 60%;
+            right: 8%;
+            animation: move 7s infinite;
+        }
+
+        /* Animations */
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes float1 {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(50px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float2 {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-60px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float3 {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(40px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes move {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: .3;
+            }
+
+            50% {
+                transform: translateY(-25px);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+
+        @media(max-width:991px) {
+
+            .error-number {
+                font-size: 150px;
+            }
+
+            .error-content h2 {
+                font-size: 34px;
+            }
+        }
+
+        @media(max-width:576px) {
+
+            .error-number {
+                font-size: 100px;
+            }
+
+            .error-content h2 {
+                font-size: 26px;
+            }
+
+            .error-content p {
+                font-size: 15px;
+            }
+
+            .error-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+    <div class="bg-circle circle-3"></div>
+
+    <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <section class="error-page">
+
+        <div class="error-content">
+
+            <h1 class="error-number">
+                4<span>0</span>4
+            </h1>
+
+            <h2>Oops! Page Not Found</h2>
+
+            <p>
+                The page you are looking for might have been removed,
+                had its name changed, or is temporarily unavailable.
+            </p>
+
+            <a href="/" class="error-btn">
+                Back To Homepage
+            </a>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

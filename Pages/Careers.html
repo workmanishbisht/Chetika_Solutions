@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chetika - careers</title>
+    <link rel="shortcut icon" href="../assets/Logo/logo.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- RemixIcon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- EmailJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/careers.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ===== SUBHEADER ===== -->
+    <div id="subHeader">
+        <div class="container-fluid px-4 px-xl-5">
+            <div class="subheader-inner">
+                <div class="subheader-left">
+                    <a href="tel:+919548055756" class="subheader-item">
+                        <i class="ri-phone-line sub-icon"></i>
+                        <span>+91 95480 55756</span>
+                    </a>
+                    <span class="sub-divider"></span>
+                    <a href="mailto:chetikasolutions@gmail.com" class="subheader-item">
+                        <i class="ri-mail-line sub-icon"></i>
+                        <span>chetikasolutions@gmail.com</span>
+                    </a>
+                </div>
+                <div class="subheader-right">
+                    <a href="https://maps.google.com/?q=Dehradun,Uttarakhand,India" target="_blank"
+                        class="subheader-item">
+                        <i class="ri-map-pin-line sub-icon"></i>
+                        <span>Dehradun, Uttarakhand, India</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid px-4 px-xl-5">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+                <img src="../assets/Logo/logo.png" alt="Chetika Logo" class="brand-logo">
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="ri-menu-line" style="font-size:24px; color:white;"></i>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../Pages/About.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#servicesSection">Web Development</a></li>
+                            <li><a class="dropdown-item" href="#servicesSection">Mobile Apps</a></li>
+                            <li><a class="dropdown-item" href="#servicesSection">Cloud Solutions</a></li>
+                            <li><a class="dropdown-item" href="#servicesSection">AI & ML</a></li>
+                            <li><a class="dropdown-item" href="#servicesSection">Cybersecurity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../Pages/Product.html">Our Products</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#Company" role="button" data-bs-toggle="dropdown">
+                            Company
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../Pages/Careers.html">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Pages/Contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav-actions d-flex align-items-center gap-3">
+                    <a href="tel:+919548055756" class="nav-phone d-none d-xl-flex align-items-center gap-2">
+                        <i class="ri-phone-line icon-sm"></i>
+                        <span style="font-weight: 500; font-size: 14px;">+91 95480 55756</span>
+                    </a>
+                    <a href="#Contact" class="btn-contact">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ===== CAREERS HERO ===== -->
+    <section class="careers-hero" id="careersHero">
+        <div class="careers-hero-bg"></div>
+        <div class="careers-hero-overlay"></div>
+        <div class="container-fluid px-4 px-xl-5">
+            <div class="careers-hero-inner">
+                <span class="careers-hero-tag">
+                    <i class="ri-briefcase-4-line"></i>
+                    We're Hiring
+                </span>
+                <h1 class="careers-hero-title">
+                    Build Your Career.<br>
+                    Shape the <span class="accent-word">Future.</span>
+                </h1>
+                <p class="careers-hero-desc">
+                    At Chetika, we build more than software — we build solutions that create impact.
+                    Join our team of innovators, problem solvers and dreamers.
+                </p>
+                <div class="careers-hero-cta">
+                    <a href="#openPositions" class="btn-careers-primary">
+                        <i class="ri-search-line"></i>
+                        View Openings
+                    </a>
+                    <a href="#lifeAtChetika" class="btn-careers-outline">
+                        Life at Chetika
+                        <i class="ri-play-circle-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY JOIN US ===== -->
+    <section class="careers-why" id="whyJoinUs">
+        <div class="container-fluid px-4 px-xl-5">
+            <div class="text-center">
+                <span class="careers-section-tag">Why Join Us</span>
+                <h2 class="careers-section-title">We Care For <span class="accent-word">People</span> Who Care</h2>
+            </div>
+
+            <div class="perks-grid">
+                <div class="perk-card" data-perk="0">
+                    <div class="perk-icon-wrap"><i class="ri-heart-pulse-line"></i></div>
+                    <div class="perk-title">Health &amp; Wellness</div>
+                    <p class="perk-desc">Medical insurance, mental health support and wellness programs.</p>
+                </div>
+                <div class="perk-card" data-perk="1">
+                    <div class="perk-icon-wrap"><i class="ri-graduation-cap-line"></i></div>
+                    <div class="perk-title">Learning &amp; Growth</div>
+                    <p class="perk-desc">Continuous learning, certifications and access to global resources.</p>
+                </div>
+                <div class="perk-card" data-perk="2">
+                    <div class="perk-icon-wrap"><i class="ri-time-line"></i></div>
+                    <div class="perk-title">Work-Life Balance</div>
+                    <p class="perk-desc">Flexible work hours, remote options and generous leave policy.</p>
+                </div>
+                <div class="perk-card" data-perk="3">
+                    <div class="perk-icon-wrap"><i class="ri-award-line"></i></div>
+                    <div class="perk-title">Recognition</div>
+                    <p class="perk-desc">Celebrate wins, big or small. Your efforts always matter.</p>
+                </div>
+                <div class="perk-card" data-perk="4">
+                    <div class="perk-icon-wrap"><i class="ri-group-line"></i></div>
+                    <div class="perk-title">Diverse &amp; Inclusive</div>
+                    <p class="perk-desc">We value diverse perspectives and create an inclusive culture.</p>
+                </div>
+                <div class="perk-card" data-perk="5">
+                    <div class="perk-icon-wrap"><i class="ri-gift-line"></i></div>
+                    <div class="perk-title">Perks &amp; Benefits</div>
+                    <p class="perk-desc">Exciting perks, team outings, bonuses and much more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OPEN POSITIONS ===== -->
+    <section class="careers-positions" id="openPositions">
+        <div class="container-fluid px-4 px-xl-5">
+            <div class="positions-layout">
+
+                <!-- Sidebar -->
+                <div class="positions-sidebar">
+                    <span class="positions-sidebar-tag">Open Positions</span>
+                    <h2 class="positions-sidebar-title">Find Your Next Opportunity</h2>
+                    <p class="positions-sidebar-desc">Explore roles that match your skills and passion. We're always
+                        looking for talented people to join our journey.</p>
+                    <a href="#" class="btn-view-all">
+                        View All Openings
+                        <i class="ri-arrow-right-line icon-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Jobs List -->
+                <div>
+                    <div class="positions-filter">
+                        <button class="filter-tab active" data-filter="all">All</button>
+                        <button class="filter-tab" data-filter="engineering">Engineering</button>
+                        <button class="filter-tab" data-filter="product">Product</button>
+                        <button class="filter-tab" data-filter="design">Design</button>
+                        <button class="filter-tab" data-filter="remote">Remote</button>
+                    </div>
+
+                    <div class="jobs-list" id="jobsList">
+
+                        <div class="job-card" data-category="engineering" data-job="Software Developer">
+                            <div class="job-info">
+                                <div class="job-title">Software Developer</div>
+                                <div class="job-meta">
+                                    <span class="job-meta-item"><i class="ri-code-s-slash-line"></i> Engineering</span>
+                                    <span class="job-meta-item"><i class="ri-map-pin-line"></i> Dehradun, India</span>
+                                </div>
+                            </div>
+                            <span class="job-badge full-time">Full-time</span>
+                            <a href="#" class="btn-apply" data-bs-toggle="modal" data-bs-target="#applyModal"
+                                data-role="Software Developer">
+                                Apply Now <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+
+                        <div class="job-card" data-category="engineering" data-job="Frontend Developer">
+                            <div class="job-info">
+                                <div class="job-title">Frontend Developer</div>
+                                <div class="job-meta">
+                                    <span class="job-meta-item"><i class="ri-code-s-slash-line"></i> Engineering</span>
+                                    <span class="job-meta-item"><i class="ri-map-pin-line"></i> Remote</span>
+                                </div>
+                            </div>
+                            <span class="job-badge full-time">Full-time</span>
+                            <a href="#" class="btn-apply" data-bs-toggle="modal" data-bs-target="#applyModal"
+                                data-role="Frontend Developer">
+                                Apply Now <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+
+                        <div class="job-card" data-category="design" data-job="UI/UX Designer">
+                            <div class="job-info">
+                                <div class="job-title">UI/UX Designer</div>
+                                <div class="job-meta">
+                                    <span class="job-meta-item"><i class="ri-palette-line"></i> Design</span>
+                                    <span class="job-meta-item"><i class="ri-map-pin-line"></i> Dehradun, India</span>
+                                </div>
+                            </div>
+                            <span class="job-badge full-time">Full-time</span>
+                            <a href="#" class="btn-apply" data-bs-toggle="modal" data-bs-target="#applyModal"
+                                data-role="UI/UX Designer">
+                                Apply Now <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+
+                        <div class="job-card" data-category="engineering remote" data-job="DevOps Engineer">
+                            <div class="job-info">
+                                <div class="job-title">DevOps Engineer</div>
+                                <div class="job-meta">
+                                    <span class="job-meta-item"><i class="ri-server-line"></i> Engineering</span>
+                                    <span class="job-meta-item"><i class="ri-map-pin-line"></i> Hyderabad, India</span>
+                                </div>
+                            </div>
+                            <span class="job-badge remote">Remote</span>
+                            <a href="#" class="btn-apply" data-bs-toggle="modal" data-bs-target="#applyModal"
+                                data-role="DevOps Engineer">
+                                Apply Now <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+
+                        <div class="job-card" data-category="product" data-job="Product Manager">
+                            <div class="job-info">
+                                <div class="job-title">Product Manager</div>
+                                <div class="job-meta">
+                                    <span class="job-meta-item"><i class="ri-layout-line"></i> Product</span>
+                                    <span class="job-meta-item"><i class="ri-map-pin-line"></i> Dehradun, India</span>
+                                </div>
+                            </div>
+                            <span class="job-badge full-time">Full-time</span>
+                            <a href="#" class="btn-apply" data-bs-toggle="modal" data-bs-target="#applyModal"
+                                data-role="Product Manager">
+                                Apply Now <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+
+                        <div class="job-card" data-category="engineering remote" data-job="Mobile App Developer">
+                            <div class="job-info">
+                                <div class="job-title">Mobile App Developer</div>
+                                <div class="job-meta">
+                                    <span class="job-meta-item"><i class="ri-smartphone-line"></i> Engineering</span>
+                                    <span class="job-meta-item"><i class="ri-map-pin-line"></i> Remote</span>
+                                </div>
+                            </div>
+                            <span class="job-badge remote">Remote</span>
+                            <a href="#" class="btn-apply" data-bs-toggle="modal" data-bs-target="#applyModal"
+                                data-role="Mobile App Developer">
+                                Apply Now <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="jobs-view-more">
+                        <a href="#" class="btn-jobs-more">
+                            View All Openings <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LIFE AT CHETIKA ===== -->
+    <section class="careers-life" id="lifeAtChetika">
+        <div class="container-fluid px-4 px-xl-5">
+            <span class="careers-section-tag">Life at Chetika</span>
+            <h2 class="careers-section-title">
+                Great People. Great <span class="accent-word">Culture.</span>
+            </h2>
+
+            <div class="life-gallery" id="lifeGallery"></div>
+            <a href="#" class="btn-see-more">
+                <i class="ri-camera-line"></i>
+                <span>See More Moments</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== NO ROLE CTA ===== -->
+    <section class="careers-no-role">
+        <div class="container-fluid px-4 px-xl-5">
+            <div class="no-role-inner">
+                <div class="no-role-icon">
+                    <i class="ri-send-plane-line"></i>
+                </div>
+                <div class="no-role-text">
+                    <h3 class="no-role-title">Don't See the Right Role?</h3>
+                    <p class="no-role-desc">We're always excited to meet talented people. Share your profile with us.
+                    </p>
+                </div>
+                <a href="#" class="btn-send-resume" data-bs-toggle="modal" data-bs-target="#applyModal"
+                    data-role="Open Application">
+                    Send Your Resume
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== APPLY MODAL ===== -->
+    <div class="modal fade careers-apply-modal" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applyModalLabel">Apply for <span id="applyRoleName">Position</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="applyForm" novalidate>
+                        <div class="apply-form-row">
+                            <div class="apply-form-group">
+                                <label class="apply-form-label">First Name *</label>
+                                <input type="text" class="apply-form-input" id="firstName" name="first_name"
+                                    placeholder="John" required>
+                            </div>
+
+                            <div class="apply-form-group">
+                                <label class="apply-form-label">Last Name *</label>
+                                <input type="text" class="apply-form-input" id="lastName" name="last_name"
+                                    placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="apply-form-row">
+                            <div class="apply-form-group">
+                                <label class="apply-form-label">Email Address *</label>
+                                <input type="email" class="apply-form-input" id="email" name="email"
+                                    placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="apply-form-group">
+                                <label class="apply-form-label">Phone Number</label>
+                                <input type="tel" class="apply-form-input" id="phone" name="phone"
+                                    placeholder="+91 98765 43210">
+                            </div>
+                        </div>
+
+                        <div class="apply-form-group">
+                            <label class="apply-form-label">Position Applying For</label>
+                            <input type="text" class="apply-form-input" id="applyRoleInput" name="position" readonly>
+                        </div>
+
+                        <div class="apply-form-group">
+                            <label class="apply-form-label">Years of Experience</label>
+                            <select class="apply-form-select" id="experience" name="experience">
+                                <option value="">Select experience</option>
+                                <option value="0 – 1 year (Fresher)">0 – 1 year (Fresher)</option>
+                                <option value="1 – 3 years">1 – 3 years</option>
+                                <option value="3 – 5 years">3 – 5 years</option>
+                                <option value="5 – 8 years">5 – 8 years</option>
+                                <option value="8+ years">8+ years</option>
+                            </select>
+                        </div>
+
+                        <div class="apply-form-group">
+                            <label class="apply-form-label">Cover Letter / Message</label>
+                            <textarea class="apply-form-textarea" id="message" name="message"
+                                placeholder="Tell us about yourself and why you'd be a great fit..."></textarea>
+                        </div>
+
+                        <div class="apply-form-group">
+                            <label class="apply-form-label">Resume Link (Google Drive / Dropbox)</label>
+                            <input type="url" class="apply-form-input" name="resume_link"
+                                placeholder="https://drive.google.com/your-resume-link">
+                            <small style="color:#aaa; font-size:0.8rem; margin-top:6px; display:block;">
+                                <i class="ri-information-line"></i>
+                                Google Drive ya Dropbox ka publicly shareable link paste karo
+                            </small>
+                        </div>
+
+                        <button type="submit" class="btn-submit-apply" id="applySubmitBtn">
+                            <i class="ri-send-plane-line"></i>
+                            Submit Application
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="mainFooter">
+        <div class="footer-cta-strip">
+            <div class="container-fluid px-4 px-xl-5">
+                <div class="footer-cta-inner">
+                    <div class="footer-cta-left">
+                        <span class="footer-cta-tag">Ready to Start?</span>
+                        <h3 class="footer-cta-title">Let's Build Your Next Big Thing</h3>
+                    </div>
+                    <div class="footer-cta-right">
+                        <a href="#Contact" class="btn-footer-cta">
+                            Get In Touch
+                            <i class="ri-arrow-right-line icon-sm"></i>
+                        </a>
+                        <a href="tel:+919548055756" class="btn-footer-call">
+                            <i class="ri-phone-line icon-sm"></i>
+                            +91 95480 55756
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-body">
+            <div class="container-fluid px-4 px-xl-5">
+                <div class="footer-grid">
+
+                    <div class="footer-col footer-brand-col">
+                        <a href="index.html" class="footer-logo-wrap">
+                            <img src="../assets/Logo/logo.png" alt="Chetika Logo" class="footer-logo">
+                        </a>
+                        <p class="footer-brand-desc">
+                            Engineering scalable software solutions that drive real business growth. Trusted by 50+
+                            clients across India and globally.
+                        </p>
+                        <div class="footer-socials">
+                            <a href="#" class="fsoc-link" aria-label="LinkedIn"><i class="ri-linkedin-line"></i></a>
+                            <a href="#" class="fsoc-link" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+                            <a href="#" class="fsoc-link" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                            <a href="#" class="fsoc-link" aria-label="GitHub"><i class="ri-github-line"></i></a>
+                        </div>
+                        <div class="footer-contact-list">
+                            <a href="tel:+919548055756" class="footer-contact-item">
+                                <i class="ri-phone-line"></i>
+                                <span>+91 95480 55756</span>
+                            </a>
+                            <a href="mailto:chetikasolutions@gmail.com" class="footer-contact-item">
+                                <i class="ri-mail-line"></i>
+                                <span>chetikasolutions@gmail.com</span>
+                            </a>
+                            <div class="footer-contact-item">
+                                <i class="ri-map-pin-line"></i>
+                                <span>Dehradun, Uttarakhand, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="#servicesSection">Web Development</a></li>
+                            <li><a href="#servicesSection">Mobile App Development</a></li>
+                            <li><a href="#servicesSection">UI/UX Design</a></li>
+                            <li><a href="#servicesSection">AI & Automation</a></li>
+                            <li><a href="#servicesSection">Cloud Solutions</a></li>
+                            <li><a href="#servicesSection">Data Analytics</a></li>
+                            <li><a href="#servicesSection">Cybersecurity</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="#aboutSection">About Us</a></li>
+                            <li><a href="#Our_Team">Our Team</a></li>
+                            <li><a href="#Careers">Careers</a></li>
+                            <li><a href="#Contact">Contact Us</a></li>
+                        </ul>
+
+                        <h4 class="footer-col-title" style="margin-top: 2rem;">Working Hours</h4>
+                        <ul class="footer-links">
+                            <li class="footer-hours-item">
+                                <span class="fh-day">Mon – Fri</span>
+                                <span class="fh-time">9:00 AM – 6:00 PM</span>
+                            </li>
+                            <li class="footer-hours-item">
+                                <span class="fh-day">Saturday</span>
+                                <span class="fh-time">Closed</span>
+                            </li>
+                            <li class="footer-hours-item">
+                                <span class="fh-day">Sunday</span>
+                                <span class="fh-time">Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Stay Updated</h4>
+                        <p class="footer-nl-desc">Subscribe to get the latest tech insights and company news
+                            delivered
+                            to your inbox.</p>
+                        <form class="footer-nl-form" id="footerNlForm" novalidate>
+                            <div class="footer-nl-input-wrap">
+                                <i class="ri-mail-line footer-nl-icon"></i>
+                                <input type="email" id="footer-nl-email" class="footer-nl-input"
+                                    placeholder="Your email address" required>
+                            </div>
+                            <button type="submit" class="btn-footer-nl" id="footerNlBtn">
+                                Subscribe
+                                <i class="ri-arrow-right-line icon-sm"></i>
+                            </button>
+                        </form>
+
+                        <div class="footer-badges">
+                            <div class="footer-badge"><i class="ri-shield-check-line"></i><span>OWASP
+                                    Certified</span>
+                            </div>
+                            <div class="footer-badge"><i class="ri-award-line"></i><span>ISO Ready</span></div>
+                            <div class="footer-badge"><i class="ri-star-line"></i><span>4.8★ Rated</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container-fluid px-4 px-xl-5">
+                <div class="footer-bottom-inner">
+                    <p class="footer-copy">
+                        &copy; <span id="footerYear"></span> Chetika Solutions. All rights reserved.
+                    </p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <span class="fbl-dot"></span>
+                        <a href="#">Terms of Service</a>
+                        <span class="fbl-dot"></span>
+                        <a href="#">Sitemap</a>
+                    </div>
+                    <p class="footer-made">Made with Chetika Pvt. Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ===== TOAST ===== -->
+    <div id="contToast" class="hide">
+        <i class="ri-check-circle-line"></i>
+        <span class="toast-message">Message sent successfully!</span>
+        <button id="toastClose"><i class="ri-close-line"></i></button>
+    </div>
+
+
+
+    <!-- Script js File -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/toast.js"></script>
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
