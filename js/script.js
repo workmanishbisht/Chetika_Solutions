@@ -362,32 +362,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Team carousel
     (function initTeamCarousel() {
-        const track    = document.getElementById('teamCarouselTrack');
+        const track = document.getElementById('teamCarouselTrack');
         const dotsWrap = document.getElementById('tmDots');
-        const btnPrev  = document.getElementById('tmPrev');
-        const btnNext  = document.getElementById('tmNext');
+        const btnPrev = document.getElementById('tmPrev');
+        const btnNext = document.getElementById('tmNext');
 
         if (!track || !dotsWrap || !btnPrev || !btnNext) return;
 
-        const cards      = Array.from(track.querySelectorAll('.tm-card'));
+        const cards = Array.from(track.querySelectorAll('.tm-card'));
         const totalCards = cards.length;
 
         function getVisible() {
             const w = window.innerWidth;
-            if (w <= 575)  return 1;
-            if (w <= 991)  return 2;
+            if (w <= 575) return 1;
+            if (w <= 991) return 2;
             if (w <= 1199) return 3;
             return 4;
         }
 
         let currentIndex = 0;
-        let isDragging   = false;
-        let startX       = 0;
-        let dragDelta    = 0;
+        let isDragging = false;
+        let startX = 0;
+        let dragDelta = 0;
 
         function buildDots() {
             dotsWrap.innerHTML = '';
-            const visible    = getVisible();
+            const visible = getVisible();
             const totalPages = Math.ceil(totalCards / visible);
             for (let i = 0; i < totalPages; i++) {
                 const dot = document.createElement('button');
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function updateDots() {
-            const visible    = getVisible();
+            const visible = getVisible();
             const activePage = Math.floor(currentIndex / visible);
             dotsWrap.querySelectorAll('.tm-dot').forEach((d, i) => {
                 d.classList.toggle('active', i === activePage);
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function getCardWidth() {
             if (!cards[0]) return 0;
             const rect = cards[0].getBoundingClientRect();
-            const gap  = parseFloat(getComputedStyle(track).gap) || 0;
+            const gap = parseFloat(getComputedStyle(track).gap) || 0;
             return rect.width + gap;
         }
 
@@ -419,9 +419,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function clampIndex() {
-            const visible  = getVisible();
+            const visible = getVisible();
             const maxIndex = Math.max(0, totalCards - visible);
-            currentIndex   = Math.max(0, Math.min(currentIndex, maxIndex));
+            currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
         }
 
         function goTo(index) {
@@ -437,7 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function updateButtons() {
-            const visible  = getVisible();
+            const visible = getVisible();
             const maxIndex = Math.max(0, totalCards - visible);
             btnPrev.disabled = currentIndex <= 0;
             btnNext.disabled = currentIndex >= maxIndex;
@@ -448,8 +448,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function onDragStart(x) {
             isDragging = true;
-            startX     = x;
-            dragDelta  = 0;
+            startX = x;
+            dragDelta = 0;
             track.classList.add('is-dragging');
         }
 
@@ -464,18 +464,18 @@ document.addEventListener('DOMContentLoaded', () => {
             isDragging = false;
             track.classList.remove('is-dragging');
             const threshold = getCardWidth() * 0.3;
-            if (dragDelta < -threshold)     goTo(currentIndex + 1);
+            if (dragDelta < -threshold) goTo(currentIndex + 1);
             else if (dragDelta > threshold) goTo(currentIndex - 1);
-            else                            goTo(currentIndex);
+            else goTo(currentIndex);
         }
 
-        track.addEventListener('mousedown',  e => onDragStart(e.clientX));
+        track.addEventListener('mousedown', e => onDragStart(e.clientX));
         window.addEventListener('mousemove', e => onDragMove(e.clientX));
-        window.addEventListener('mouseup',   onDragEnd);
+        window.addEventListener('mouseup', onDragEnd);
 
         track.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
-        track.addEventListener('touchmove',  e => onDragMove(e.touches[0].clientX),  { passive: true });
-        track.addEventListener('touchend',   onDragEnd);
+        track.addEventListener('touchmove', e => onDragMove(e.touches[0].clientX), { passive: true });
+        track.addEventListener('touchend', onDragEnd);
 
         track.addEventListener('click', e => {
             if (Math.abs(dragDelta) > 5) e.preventDefault();
@@ -487,7 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const rect = section.getBoundingClientRect();
             const inView = rect.top < window.innerHeight && rect.bottom > 0;
             if (!inView) return;
-            if (e.key === 'ArrowLeft')  goTo(currentIndex - 1);
+            if (e.key === 'ArrowLeft') goTo(currentIndex - 1);
             if (e.key === 'ArrowRight') goTo(currentIndex + 1);
         });
 
@@ -668,11 +668,11 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const name    = document.getElementById('cont-name')?.value.trim();
-            const email   = document.getElementById('cont-email')?.value.trim();
+            const name = document.getElementById('cont-name')?.value.trim();
+            const email = document.getElementById('cont-email')?.value.trim();
             const service = document.getElementById('cont-service')?.value;
             const message = document.getElementById('cont-message')?.value.trim();
-            const agree   = document.getElementById('cont-agree')?.checked;
+            const agree = document.getElementById('cont-agree')?.checked;
 
             if (!name || !email || !message) {
                 showToast('Please fill in all required fields.', true);
@@ -713,130 +713,127 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isActive) item.classList.add('active');
     };
 
-});
+    // ── Careers ──────────────────────────────────────────────────────────────
 
-// ── Careers ──────────────────────────────────────────────────────────────────
-
-// Perk cards reveal
-const perkCards = document.querySelectorAll('.perk-card');
-if (perkCards.length) {
-    new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                perkCards.forEach((card, i) => setTimeout(() => card.classList.add('revealed'), i * 90));
-            }
-        });
-    }, { threshold: 0.15 }).observe(perkCards[0]);
-}
-
-// Job cards reveal + filter tabs
-const jobCards = document.querySelectorAll('.job-card');
-if (jobCards.length) {
-    new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                jobCards.forEach((card, i) => setTimeout(() => card.classList.add('revealed'), i * 80));
-            }
-        });
-    }, { threshold: 0.1 }).observe(jobCards[0]);
-}
-
-const filterTabs = document.querySelectorAll('.filter-tab');
-if (filterTabs.length) {
-    filterTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            filterTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            const filter = tab.dataset.filter;
-            document.querySelectorAll('.job-card').forEach(card => {
-                card.style.display = (filter === 'all' || (card.dataset.category || '').includes(filter)) ? '' : 'none';
-            });
-        });
-    });
-}
-
-// Life at Chetika gallery
-const lifeGalleryData = [
-    { image: "../assets/Career/01.webp", title: "Team Collaboration" },
-    { image: "../assets/Career/02.webp", title: "Our Team" },
-    { image: "../assets/Career/03.webp", title: "Fun Activities" },
-    { image: "../assets/Career/04.webp", title: "Our Office" },
-    { image: "../assets/Career/05.webp", title: "Office Celebration" },
-    { image: "../assets/Career/06.webp", title: "Creative Workspace" },
-    { image: "../assets/Career/07.webp", title: "Company Event" },
-    { image: "../assets/Career/08.webp", title: "Brainstorming Session" }
-];
-
-const lifeGallery = document.getElementById("lifeGallery");
-if (lifeGallery) {
-    lifeGallery.innerHTML = lifeGalleryData.map((item, index) => `
-        <div class="life-img-wrap" data-life="${index}">
-            <img src="${item.image}" alt="${item.title}" loading="lazy">
-            <div class="life-overlay"><span class="life-overlay-label">${item.title}</span></div>
-        </div>
-    `).join("");
-
-    const lifeImgs = document.querySelectorAll('.life-img-wrap');
-    if (lifeImgs.length) {
+    // Perk cards reveal
+    const perkCards = document.querySelectorAll('.perk-card');
+    if (perkCards.length) {
         new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    lifeImgs.forEach((img, i) => setTimeout(() => img.classList.add('revealed'), i * 120));
+                    perkCards.forEach((card, i) => setTimeout(() => card.classList.add('revealed'), i * 90));
                 }
             });
-        }, { threshold: 0.15 }).observe(lifeImgs[0]);
+        }, { threshold: 0.15 }).observe(perkCards[0]);
     }
-}
 
-// Apply modal role sync
-const applyModal = document.getElementById('applyModal');
-if (applyModal) {
-    applyModal.addEventListener('show.bs.modal', (e) => {
-        const role       = e.relatedTarget?.dataset.role || 'Open Application';
-        const roleNameEl = document.getElementById('applyRoleName');
-        const roleInput  = document.getElementById('applyRoleInput');
-        if (roleNameEl) roleNameEl.textContent = role;
-        if (roleInput)  roleInput.value = role;
-    });
-}
-
-// Apply form submit
-const applyForm      = document.getElementById('applyForm');
-const applySubmitBtn = document.getElementById('applySubmitBtn');
-
-if (applyForm) {
-    applyForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        applySubmitBtn.disabled = true;
-        applySubmitBtn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Submitting...';
-
-        const params = {
-            first_name:  applyForm.querySelector('[name="first_name"]').value,
-            last_name:   applyForm.querySelector('[name="last_name"]').value,
-            email:       applyForm.querySelector('[name="email"]').value,
-            phone:       applyForm.querySelector('[name="phone"]')?.value || '',
-            position:    applyForm.querySelector('[name="position"]').value,
-            experience:  applyForm.querySelector('[name="experience"]').value,
-            message:     applyForm.querySelector('[name="message"]')?.value || '',
-            resume_link: applyForm.querySelector('[name="resume_link"]')?.value || 'Not provided'
-        };
-
-        emailjs.send('service_i9fkb7r', 'template_8x2l8fv', params)
-            .then(() => {
-                applyForm.reset();
-                applySubmitBtn.innerHTML = '<i class="ri-check-line"></i> Application Sent!';
-                showToast('Application submitted successfully! We\'ll review it soon.');
-                setTimeout(() => {
-                    applySubmitBtn.disabled = false;
-                    applySubmitBtn.innerHTML = '<i class="ri-send-plane-line"></i> Submit Application';
-                    bootstrap.Modal.getInstance(document.getElementById('applyModal'))?.hide();
-                }, 2000);
-            })
-            .catch((error) => {
-                console.error('Career Form Error:', error);
-                applySubmitBtn.disabled = false;
-                applySubmitBtn.innerHTML = '<i class="ri-send-plane-line"></i> Submit Application';
-                showToast('Failed to submit application. Please try again.', true);
+    // Course cards reveal
+    const jobCards = document.querySelectorAll('.job-card');
+    if (jobCards.length) {
+        new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    jobCards.forEach((card, i) => setTimeout(() => card.classList.add('revealed'), i * 80));
+                }
             });
-    });
-}
+        }, { threshold: 0.1 }).observe(jobCards[0]);
+    }
+
+    // Filter tabs
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    if (filterTabs.length) {
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const filter = tab.dataset.filter;
+                document.querySelectorAll('.job-card').forEach(card => {
+                    card.style.display =
+                        (filter === 'all' || (card.dataset.category || '').includes(filter)) ? '' : 'none';
+                });
+            });
+        });
+    }
+
+    // Enroll modal
+    const enrollModal = document.getElementById('enrollModal');
+    if (enrollModal) {
+        enrollModal.addEventListener('show.bs.modal', (e) => {
+            const trigger = e.relatedTarget;
+            const course = trigger?.dataset.course || 'Course';
+            const price = trigger?.dataset.price || '—';
+            const duration = trigger?.dataset.duration || '—';
+
+            const nameEl = document.getElementById('enrollCourseName');
+            if (nameEl) nameEl.textContent = course;
+
+            const bannerName = document.getElementById('enrollBannerName');
+            const bannerDur = document.getElementById('enrollBannerDuration');
+            const bannerPrc = document.getElementById('enrollBannerPrice');
+            if (bannerName) bannerName.textContent = course;
+            if (bannerDur) bannerDur.textContent = duration;
+            if (bannerPrc) bannerPrc.textContent = price;
+
+            const inputCourse = document.getElementById('enrollCourseInput');
+            const inputPrice = document.getElementById('enrollPriceInput');
+            const inputDuration = document.getElementById('enrollDurationInput');
+            if (inputCourse) inputCourse.value = course;
+            if (inputPrice) inputPrice.value = price;
+            if (inputDuration) inputDuration.value = duration;
+        });
+    }
+
+    // Enroll form submit
+    const enrollForm = document.getElementById('enrollForm');
+    const enrollSubmitBtn = document.getElementById('enrollSubmitBtn');
+
+    if (enrollForm) {
+        enrollForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const firstName = enrollForm.querySelector('[name="first_name"]')?.value.trim();
+            const email = enrollForm.querySelector('[name="email"]')?.value.trim();
+            const phone = enrollForm.querySelector('[name="phone"]')?.value.trim();
+
+            if (!firstName || !email || !phone) {
+                if (typeof showToast === 'function') showToast('Please fill in your name, email and phone number.', true);
+                return;
+            }
+
+            enrollSubmitBtn.disabled = true;
+            enrollSubmitBtn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Submitting...';
+
+            const params = {
+                first_name: enrollForm.querySelector('[name="first_name"]').value,
+                last_name: enrollForm.querySelector('[name="last_name"]')?.value || '',
+                email: enrollForm.querySelector('[name="email"]').value,
+                phone: enrollForm.querySelector('[name="phone"]').value,
+                course_name: enrollForm.querySelector('[name="course_name"]')?.value || '',
+                course_price: enrollForm.querySelector('[name="course_price"]')?.value || '',
+                course_duration: enrollForm.querySelector('[name="course_duration"]')?.value || '',
+                education: enrollForm.querySelector('[name="education"]')?.value || '',
+                experience_level: enrollForm.querySelector('[name="experience_level"]')?.value || '',
+                message: enrollForm.querySelector('[name="message"]')?.value || ''
+            };
+
+            emailjs.send('service_i9fkb7r', 'template_enroll01', params)
+                .then(() => {
+                    enrollForm.reset();
+                    enrollSubmitBtn.innerHTML = '<i class="ri-check-line"></i> Enrolled!';
+                    if (typeof showToast === 'function') showToast('Enrollment successful! We will contact you shortly.');
+                    setTimeout(() => {
+                        enrollSubmitBtn.disabled = false;
+                        enrollSubmitBtn.innerHTML = '<i class="ri-shopping-cart-line"></i> Enroll Now';
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('enrollModal'));
+                        if (modal) modal.hide();
+                    }, 2200);
+                })
+                .catch((error) => {
+                    console.error('Enroll Form Error:', error);
+                    enrollSubmitBtn.disabled = false;
+                    enrollSubmitBtn.innerHTML = '<i class="ri-shopping-cart-line"></i> Enroll Now';
+                    if (typeof showToast === 'function') showToast('Enrollment failed. Please try again.', true);
+                });
+        });
+    }
+});
